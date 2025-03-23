@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            margin: auto;
+            padding: 20px;
+            background-color: aqua;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .container {
+            max-width: 600px;
+            background-color: aliceblue;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px ;
+        }
+        h1 {
+            text-align: center;
+            color: rgb(0, 47, 255);
+        }
+        input, select, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(9, 9, 10);
+        }
+        button {
+            width: 100%;
+            background-color: blue;
+            color: aliceblue;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(2, 2, 105);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <H1>Personal Information</H1>
+        <form action="">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="name">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date">
+
+        <label for="gender">Gender</label>
+        <select name="province" id="gender">
+            <option value="">-- Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="hobbies">Hobbies</label>
+        <textarea name="address" id="hobbies" cols="50" rows="5"></textarea>
+
+        <label for="con">County</label>
+        <select name="province" id="con">
+            <option value="">-- Select County --</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Japan">Japan</option>
+            <option value="Usa">Usa</option>
+        </select>
+        <button>ส่ง</button>
+        </form>
+    </div>
+</body>
+</html>

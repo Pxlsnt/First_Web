@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image</title>
+    <style>
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .b-image-contain{
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            object-fit: contain;
+        }
+        .b-image-fill{
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            object-fit: fill;
+        }
+        .b-image-cover{
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            object-fit: cover;
+        }
+        .s-image-contain{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            object-fit: contain;
+        }
+        .s-image-fill{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            object-fit: fill;
+        }
+        .s-image-cover{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            object-fit: cover;
+        }
+        .gallery{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('/images/bg_christmas.webp');
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Animal</h1>
+  <img src="https://img.kapook.com/u/2021/Jarosphan/Home/Garden/180653/03.jpg" alt="A placeholder image" width="300">
+  <p>This is an image of my favorite animal.</p>
+
+  <img src="/images/rabbit3.jpg" alt="rabbit" width="300">
+
+  <hr>
+
+  <h1>Click the Image : Link for Open new window</h1>
+  <a href="https://www.wikipedia.org" target="_blank">
+    <img src="https://torange.biz/photo/56/HD/click-me-red-button-transparent-png-56302.jpg" alt="A clickable image" width="300">
+  </a>
+
+  <hr>
+
+  <h1>Image Alignment</h1>
+  <p><img src="data:image/jpeg;base64,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" alt="Left aligned image" class="left" width="300"></p>
+  <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWYdd3RZ0FJvvsrRX2Nm1VQk3tMFP-vk72lQ&s" alt="Right aligned image" class="right" width="300"></p>
+  <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWnZla1YCiMGeSn0J5saJAhIT8Z_ju12LQUA&s" alt="Center aligned image" class="center">This image is centered.</p>
+
+  <hr>
+
+  <h1>Object-Fit: Image Bigger than Container (300x100)</h1>
+  <div>
+    <img src="/images/rabbit3.jpg" alt="Sample Image" class="b-image-contain">
+    <p>contain: ปรับขนาดเนื้อหาให้พอดีกับกล่องเนื้อหา โดยรักษาอัตราส่วนภาพ อาจมีพื้นที่ว่างถ้าอัตราส่วนไม่ตรงกัน</p>
+    <br>
+  </div>
+  <div>
+    <img src="/images/rabbit3.jpg" alt="Sample Image" class="b-image-fill">
+    <p>fill (ค่าเริ่มต้น): ปรับขนาดเนื้อหาให้พอดีกับกล่องเนื้อหา อาจทำให้เนื้อหาถูกยืดหรือบีบ</p>
+    <br>
+  </div>
+  <div>
+    <img src="/images/rabbit3.jpg" alt="Sample Image" class="b-image-cover">
+    <p>cover: ปรับขนาดเนื้อหาให้เติมเต็มกล่องเนื้อหา โดยรักษาอัตราส่วนภาพ ส่วนที่เกินจะถูกตัดออก</p>
+    <br>
+  </div>
+
+
+  <hr>
+
+  <h1>Object-Fit: Image Smaller than Container</h1>
+  <div>
+    <img src="https://i.pinimg.com/736x/62/92/bc/6292bc7fc135d814017a6cab4336c1d8.jpg" alt="Sample Image" class="s-image-fill">
+    <p>fill (ค่าเริ่มต้น): ปรับขนาดเนื้อหาให้พอดีกับกล่องเนื้อหา อาจทำให้เนื้อหาถูกยืดหรือบีบ</p>
+  </div>
+
+  <div>
+    <img src="https://i.pinimg.com/736x/62/92/bc/6292bc7fc135d814017a6cab4336c1d8.jpg" alt="Sample Image" class="s-image-contain">
+    <p>contain: ปรับขนาดเนื้อหาให้พอดีกับกล่องเนื้อหา โดยรักษาอัตราส่วนภาพ อาจมีพื้นที่ว่างถ้าอัตราส่วนไม่ตรงกัน</p>
+  </div>
+
+  <div>
+    <img src="https://i.pinimg.com/736x/62/92/bc/6292bc7fc135d814017a6cab4336c1d8.jpg" alt="Sample Image" class="s-image-cover">
+    <p>cover: ปรับขนาดเนื้อหาให้เติมเต็มกล่องเนื้อหา โดยรักษาอัตราส่วนภาพ ส่วนที่เกินจะถูกตัดออก</p>
+  </div>
+
+
+  <hr>
+
+
+  <h1>Image Gallery</h1>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/6b/ad/0b/6bad0b879a0c1322ab04ab61880a52c0.jpg" alt="Image 1" height="150">
+    <img src="https://i.pinimg.com/736x/9b/0b/24/9b0b247965ab2c5339910146d6bc72eb.jpg" alt="Image 2" height="150">
+    <img src="https://i.pinimg.com/736x/43/e2/e0/43e2e056b0bb3751f19a1c5d57ff2e1a.jpg" alt="Image 3" height="150">
+    <img src="https://i.pinimg.com/736x/42/eb/8f/42eb8f8d9cc8c3a3eac0968cb6e15b93.jpg" alt="Image 4" height="150">
+  </div>
+
+  <hr>
+
+
+  <h1>FlexBox: </h1>
+  <div class="ex-flex">
+    <img src="images/flex.jpg" alt="Image 1">
+    <br>
+  </div>
+
+  <hr>
+  <h1>FlexBox: justify-content</h1>
+  <div class="ex-flex">
+    <img src="images/justify-content.jpg" alt="Image 1">
+    <br>
+  </div>
+  
+  <hr>
+
+
+  <div class="back-to-home">
+    <a href="index.html">Back to Home</a>
+  </div>
+</body>
+</html>

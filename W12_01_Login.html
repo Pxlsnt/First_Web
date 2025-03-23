@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 20%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+}
+
+.login-container {
+  display: flex;
+  width: 700px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 00.2);
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  background: url("https://cdn.sanity.io/images/tlr8oxjg/production/5c3120359be5c4f225cd7b817811217041b759ab-1192x668.png?w=3840&q=100&fit=clip&auto=format")
+    no-repeat center center/cover;
+  color: rgb(255, 252, 252);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.right-panel {
+  flex: 1;
+  padding: 40px;
+  width: 40px;
+}
+p {
+  text-align: center;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+button {
+  width: 101%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #218838;
+}
+
+.forgot,
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.forgot:hover,
+a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-panel">
+            <h1>INFORMATION TECHNOLOGY</h1>
+            <p>ยินดีต้อนรับเข้าสู่ระบบกิจกรรมสาขาวิชาเทคโนโลยีสารสนเทศ</p>
+        </div>
+        <div class="right-panel">
+            <h2>Login</h2>
+            <form id="loginForm" method="post">
+                <label for="">Username:</label>
+                <input type="text" placeholder="ชื่อผู้ใช้" id="username" required>
+
+                <label for="">Password:</label>
+                <input type="password" placeholder="รหัสผ่าน" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p><a href="#" class="forgot">Forgot Password?</a></p>
+            <p>Don't have an account?<a href="#">Register</a></p>
+        </div>
+    </div>
+
+    <script>
+        // เพิ่ม event listener ให้กับฟอร์มที่มี id เป็น "loginForm"
+        // เมื่อผู้ใช้กด submit จะเรียกใช้ฟังก์ชันที่กำหนด
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // ป้องกันการโหลดหน้าใหม่เมื่อกดปุ่ม submit
+  
+            // ดึงค่าที่ผู้ใช้ป้อนจาก input field (username และ password) และตัดช่องว่างด้านหน้า/หลังออก
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let errorMsg = document.getElementById("errorMsg"); // อ้างอิงถึง div ที่ใช้แสดงข้อความ error
+  
+            // ตรวจสอบว่าผู้ใช้กรอกข้อมูลครบหรือไม่
+            if (username === "" || password === "") {
+                errorMsg.textContent = "กรุณากรอก Username และ Password"; // แสดงข้อความแจ้งเตือน
+                return; // ออกจากฟังก์ชันทันที ไม่ดำเนินการตรวจสอบต่อ
+            }
+  
+            // ตรวจสอบว่าข้อมูลที่ป้อนตรงกับค่าที่กำหนดไว้หรือไม่ (username: "admin", password: "1234")
+            if (username === "admin" && password === "1111") {
+                //alert("เข้าสู่ระบบสำเร็จ!"); // แจ้งเตือนผู้ใช้ว่าล็อกอินสำเร็จ
+                window.location.href = "W13_01_webresponsive.html"; // เปลี่ยนหน้าไปยังเป้าหมาย"
+            } else {
+                errorMsg.textContent = "Username หรือ Password ไม่ถูกต้อง"; // แสดงข้อความ error เมื่อป้อนข้อมูลผิด
+            }
+        });
+    </script>
+
+</body>
+</html>
